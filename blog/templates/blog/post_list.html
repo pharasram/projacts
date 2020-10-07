@@ -22,15 +22,48 @@
         </div>
 
         <div>
-            <p>published: 14.06.2014, 12:14</p>
+             <p>published: 14.06.2014, 12:14</p>
             <h2><a href="">My first post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+            
         </div>
+       <div>
+    <h1><a href="/">Django Girls Blog</a></h1>
+</div>
 
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+ career edge
+{% endfor %}Top tips for video interviewing and networking:
+Prep all your technical elements
+
+Ensure your battery life is good
+Test your audio and video technology
+Close other tabs, browsers, software, or applications that may slow down your connection
+Log onto the call or interview earlier to ensure all technical aspects are running smoothly
+Evaluate what others will be able to see from your video feed
+
+Avoid anything too distracting in your background
+Ensure your space is quiet
+Let people who live with you know you’re having a video meeting
+Dress professionally
+Show you engagement in the conversation
+
+Elevate your webcam to its at eye level
+Keep good posture
+Try to maintain eye contact
+Enunciate and project your voice
+Pause to allow others to speak and account for audio lags
+Take notes on a pen and pad and not on your computer or phone
+Missed the TorontoJobs.ca’s July Virtual Career Conference? You can join us for the August edition! Click here to register now for the TorontoJobs.ca Virtual Career Conference held on August 26, from 1-4 pm.s
+</div>
         <div>
             <p>published: 14.06.2014, 12:14</p>
             <h2><a href="">My second post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
+            
         </div>
     </body>
 </html>

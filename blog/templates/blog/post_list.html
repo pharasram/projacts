@@ -1,14 +1,9 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    <div class="Post">
-        {% if Post.published_date %}
-            <div class="date">
-                {{Post.published_date }}
-            </div>
-        {% endif %}
-        <h2>{{ Post.title }}</h2>
-        <p>{{ Post.text|linebreaksbr }}</p>
-    </div>
+    <h2>New Post</h2>
+    <form method="Post" class="Post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
 {% endblock %}
-       

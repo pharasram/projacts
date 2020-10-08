@@ -1,69 +1,14 @@
-<html>
-<body>
-    <p>Hi there!</p>
-    <p>It works!</p>
-</body>
-</html>
-    <head>
-        <title>parsuram blog</title>
-    </head>
-    <body>
-        <p>Hi there!</p>
-        <p>It works!</p>
-    </body>
-</html>
-<html>
-    <head>
-        <title>Django Girls blog</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="/">Django Girls Blog</a></h1>
-        </div>
+{% extends 'blog/base.html' %}
 
-        <div>
-             <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-            
-        </div>
-       <div>
-    <h1><a href="/">Django Girls Blog</a></h1>
-</div>
-
-{% for post in posts %}
-    <div>
-        <p>published: {{ post.published_date }}</p>
-        <h2><a href="">{{ post.title }}</a></h2>
-        <p>{{ post.text|linebreaksbr }}</p>
+{% block content %}
+    <div class="Post">
+        {% if Post.published_date %}
+            <div class="date">
+                {{Post.published_date }}
+            </div>
+        {% endif %}
+        <h2>{{ Post.title }}</h2>
+        <p>{{ Post.text|linebreaksbr }}</p>
     </div>
- career edge
-{% endfor %}Top tips for video interviewing and networking:
-Prep all your technical elements
-
-Ensure your battery life is good
-Test your audio and video technology
-Close other tabs, browsers, software, or applications that may slow down your connection
-Log onto the call or interview earlier to ensure all technical aspects are running smoothly
-Evaluate what others will be able to see from your video feed
-
-Avoid anything too distracting in your background
-Ensure your space is quiet
-Let people who live with you know you’re having a video meeting
-Dress professionally
-Show you engagement in the conversation
-
-Elevate your webcam to its at eye level
-Keep good posture
-Try to maintain eye contact
-Enunciate and project your voice
-Pause to allow others to speak and account for audio lags
-Take notes on a pen and pad and not on your computer or phone
-Missed the TorontoJobs.ca’s July Virtual Career Conference? You can join us for the August edition! Click here to register now for the TorontoJobs.ca Virtual Career Conference held on August 26, from 1-4 pm.s
-</div>
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            
-        </div>
-    </body>
-</html>
+{% endblock %}
+       

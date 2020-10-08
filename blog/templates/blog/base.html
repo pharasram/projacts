@@ -10,7 +10,6 @@
     <body>
        <body>
     <div class="page-header">
-         <a href="{% url 'Post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
         <h1><a href="/">parsuram biotechnology blog</a></h1>
     </div>
     <div class="content container">
@@ -26,7 +25,7 @@
         <div class="content container">
             <div class="row">
                 <div class="col-md-8">
-                {% for post in Posts %}
+            
                     <div class="Post">
                         <div class="date">
                             {{ Post.published_date }}
@@ -34,7 +33,7 @@
                         <h2><a href="">{{ Post.title }}</a></h2>
                         <p>{{ Post.text|linebreaksbr }}</p>
                     </div>
-                {% endfor %}
+                
                 </div>
             </div>
         </div>

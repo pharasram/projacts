@@ -1,39 +1,24 @@
 {% load static %}
 <html>
     <head>
-        <title>Django Girls blog</title>
+        <title>pausramblog.com</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
     <body>
-       <body>
-    <div class="page-header">
-        <h1><a href="/">parsuram biotechnology blog</a></h1>
-    </div>
-    <div class="content container">
-        <div class="row">
-            <div class="col-md-8">
-            {% block content %}
-            {% endblock %}
-            </div>
+        <div class="page-header">
+           {% if user.is_authenticated %}
+           <a href="{% url 'Post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+           {% endif %}
+            <h1><a href="/">Django Girls Blog</a></h1>
         </div>
-    </div>
-</body?>
-
         <div class="content container">
             <div class="row">
                 <div class="col-md-8">
-            
-                    <div class="Post">
-                        <div class="date">
-                            {{ Post.published_date }}
-                        </div>
-                        <h2><a href="">{{ Post.title }}</a></h2>
-                        <p>{{ Post.text|linebreaksbr }}</p>
-                    </div>
-                
+                    {% block content %}
+                    {% endblock %}
                 </div>
             </div>
         </div>
